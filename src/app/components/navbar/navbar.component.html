@@ -1,1 +1,60 @@
-<p>navbar works!</p>
+<div class="sticky top-0 bg-background">
+    <div class="p-7 lg:ms-12  flex justify-between items-center  relative">
+            <button class="lg:hidden m-0 justify-start absolute z-51" (click)="isMenuOpen = !isMenuOpen">
+                    <span class="material-icons text-white text-4xl transition-transform duration-300"
+                            [ngClass]="{ 'rotate-180': isMenuOpen }">
+                            menu
+                    </span>
+            </button>
+
+            <div class="ml-10">
+                    <a class="text-text-color text-2xl font-serif tracking-widest font-semibold" routerLink="/">Software Developer
+                    </a>
+            </div>
+
+            <ul class="hidden lg:flex gap-x-10 mr-40 text-lg text-text-color font-semibold ">
+                    <li><a routerLink="/" routerLinkActive="text-purple-400"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                    class="hover:text-fuchsia-400">Home</a></li>
+                    <li><a routerLink="about" routerLinkActive="text-purple-400"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                    class="hover:text-fuchsia-400">About</a></li>
+                    <li><a routerLink="skills" routerLinkActive="text-purple-400"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                    class="hover:text-fuchsia-400">Skills</a></li>
+                    <li><a routerLink="projects" routerLinkActive="text-purple-400"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                    class="hover:text-fuchsia-400">Projects</a></li>
+                    <li><a routerLink="contact" routerLinkActive="text-purple-400"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                    class="hover:text-fuchsia-400">Contact</a></li>
+            </ul>
+
+            @if(isMenuOpen){
+            <div class="absolute top-0 left-0 w-full bg-background/50 backdrop-blur-xl text-white lg:hidden z-50 ">
+                    <ul class="flex flex-col gap-y-3 p-4 text-lg font-semibold ml-15">
+                            <li class="mt-15"><a routerLink="/" routerLinkActive="text-purple-400"
+                                            (click)="isMenuOpen = !isMenuOpen"
+                                            [routerLinkActiveOptions]="{ exact: true }"
+                                            class="hover:text-fuchsia-400">Home</a></li>
+                            <li><a routerLink="about" (click)="isMenuOpen = !isMenuOpen"
+                                            routerLinkActive="text-purple-400"
+                                            [routerLinkActiveOptions]="{ exact: true }"
+                                            class="hover:text-fuchsia-400">About</a></li>
+                            <li><a routerLink="skills" (click)="isMenuOpen = !isMenuOpen"
+                                            routerLinkActive="text-purple-400"
+                                            [routerLinkActiveOptions]="{ exact: true }"
+                                            class="hover:text-fuchsia-400">Skills</a></li>
+                            <li><a routerLink="projects" (click)="isMenuOpen = !isMenuOpen"
+                                            routerLinkActive="text-purple-400"
+                                            [routerLinkActiveOptions]="{ exact: true }"
+                                            class="hover:text-fuchsia-400">Projects</a></li>
+                            <li><a routerLink="contact" (click)="isMenuOpen = !isMenuOpen"
+                                            routerLinkActive="text-purple-400"
+                                            [routerLinkActiveOptions]="{ exact: true }"
+                                            class="hover:text-fuchsia-400">Contact</a></li>
+                    </ul>
+            </div>
+            }
+    </div>
+</div>

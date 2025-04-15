@@ -1,1 +1,45 @@
-<p>contact works!</p>
+<div class="flex flex-col items-center justify-center">
+    <div class="text-center mt-5">
+        <span class="material-icons text-purple-500 text-6xl mb-4" style="font-size: 100px;">
+            mail
+        </span>
+        <h1 class="text-2xl lg:text-4xl font-bold text-text-color mb-2">Contact Me</h1>
+        <p class="text-text-sub-color text-base lg:text-lg max-w-4xl">
+            Have a project in mind or just want to say hello? I'm always open to discussing new ideas, creative work, or
+            opportunities to be part of your vision.
+        </p>
+    </div>
+    <form class="mt-5 lg:mt-10" #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)">
+        <div class="shadow-[0_0_20px_rgba(0,0,0,0.5)] p-5 w-90 lg:p-8 rounded-xl md:w-200">
+
+            <div>
+                <label for="name" class=" text-text-color text-lg font-semibold mb-2">Name:</label>
+                <textarea rows="1" type="text" id="name" name="name" [(ngModel)]="formData.name"
+                    placeholder="Enter your name" class="mt-2 w-full p-3 rounded resize-none  text-white border-2 border-border"
+                    required></textarea>
+            </div>
+
+            <div class="mt-5">
+                <label for="email" class=" text-text-color text-lg font-semibold mb-2">Email:</label>
+                <textarea rows="1" type="email" id="email" name="email" [(ngModel)]="formData.email"
+                    placeholder="Enter your email"
+                    class=" mt-2  w-full p-3 rounded  resize-none text-white border-2 border-border " required></textarea>
+            </div>
+
+            <div class="mt-5">
+                <label for="message" class=" text-text-color text-lg font-semibold mb-2">Message:</label>
+                <textarea id="message" rows="4" name="message" [(ngModel)]="formData.message" placeholder="Your Message"
+                    class="mt-2  w-full p-3 rounded  text-white border-2 border-border" required></textarea>
+            </div>
+
+            <div class="text-center mt-5">
+                <button type="submit"
+                    class="border-2 border-purple-500  text-white px-6 py-3 rounded-tl-xl rounded-br-xl transition lg:py-2">
+                    Send Message
+                </button>
+            </div>
+
+        </div>
+    </form>
+
+</div>

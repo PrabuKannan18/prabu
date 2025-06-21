@@ -1,44 +1,66 @@
-<div class="lg:p-50 md:px-20 flex flex-col lg:flex-row justify-between items-center lg:items-start overflow-hidden">
-    <div class="flex flex-col items-center justify-center order-1 lg:order-2 mb-10 lg:mb-0 md:ms-15">
-        <img src="/imgs/prabu.png" alt="my photo" class="h-64 w-64 mt-10 lg:mt-0 object-cover">
-
-        <div class="flex flex-row gap-x-8 mt-10 text-2xl text-text-color ">
-            <a class="border-2 border-border rounded-tl-xl rounded-br-xl h-10 w-10 flex items-center justify-center hover:text-purple-400"
-                href="https://www.facebook.com/rajraja.rajraja.758" target="_blank"><i
-                    class="fa-brands fa-facebook-f"></i></a>
-            <a class="border-2 border-border rounded-tl-xl rounded-br-xl h-10 w-10 flex items-center justify-center hover:text-purple-400"
-                href="https://x.com/PrabuKanna26482" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a class="border-2 border-border rounded-tl-xl rounded-br-xl h-10 w-10 flex items-center justify-center hover:text-purple-400"
-                href="https://www.instagram.com/mass_raja_vfc?igsh=MWFpMnNheGdqMTJydg==" target="_blank"><i
-                    class="fa-brands fa-instagram"></i></a>
-            <a class="border-2 border-border rounded-tl-xl rounded-br-xl h-10 w-10 flex items-center justify-center hover:text-purple-400"
-                href="https://www.linkedin.com/in/prabu-kannan-986b5827b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a class="border-2 border-border rounded-tl-xl rounded-br-xl h-10 w-10 flex items-center justify-center hover:text-purple-400"
-                href="https://github.com/PrabuKannan18" target="_blank"><i class="fa-brands fa-github"></i></a>
+<div class=" flex items-center justify-center md:py-25 ">
+  <div class="rounded-2xl overflow-hidden ">
+    <div class="flex flex-col lg:flex-row gap-8 md:gap-12 p-8 md:p-10">
+      <!-- Left Column - Content -->
+      <div class="flex-1 flex flex-col justify-center order-2 lg:order-1">
+        <div class="mb-4">
+          <span class="text-xl md:text-2xl font-medium text-teal-600">Hello, I'm</span>
         </div>
-    </div>
 
-    <div class="flex flex-col order-2 lg:order-1">
-        <h1 class="font-semibold sm:flex ms-35 lg:text-5xl text-3xl lg:ms-0  text-text-color">I'am Prabu Kannan</h1>
-        <p
-            class="sm:flex ms-25 items-center justify-center flex-wrap max-w-95 text-base mt-8 lg:text-xl lg:max-w-150  lg:ms-0  text-text-sub-color ">
-            I’m a passionate Angular & Ionic developer focused on building fast, responsive web and mobile apps.
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-5 md:mb-6">
+          Prabu Kannan
+        </h1>
+
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-semibold bg-gradient-to-r from-emerald-600 to-teal-700 text-transparent bg-clip-text mb-7 md:mb-9">
+          Angular & Ionic Developer
+        </h2>
+
+
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-9 md:mb-12 max-w-2xl">
+          I specialize in building fast, responsive web and mobile applications with clean, maintainable code.
+          Passionate about creating intuitive user experiences.
         </p>
-        <div
-            class="mt-10 flex flex-col items-center justify-center gap-y-10 lg:mt-40 lg:flex-row lg:justify-between w-140 text-white">
-            <a href="imgs/PrabuResume.pdf" download
-                class="border border-purple-500 rounded-tl-xl rounded-br-xl p-3 hover:bg-purple-800 order-2 lg:order-1 inline-block text-center">
-                Download CV
-            </a>
-            <button routerLink="/projects" class="flex items-center font-semibold order-1 lg:order-2 hover:text-violet-300">
-                <span class="flex items-center justify-center bg-white h-10 w-10 rounded-full">
-                    <i class="fa-solid fa-play text-red-700"></i>
-                </span>
-                <span class="ms-3">My projects</span>
-            </button>
+
+        <div class="flex flex-col sm:flex-row items-center gap-5 md:gap-8">
+          <a href="imgs/prabu kannan resume (4).pdf" download
+            class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-8 md:px-10 py-3 md:py-4 rounded-lg font-medium hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 text-center w-full sm:w-auto shadow-lg hover:shadow-xl">
+            Download CV
+          </a>
         </div>
+      </div>
+
+      <!-- Right Column - Image & Social -->
+      <div class="flex flex-col items-center me-0 order-1 lg:order-2">
+        <div class="relative mb-8 ">
+          <img src="/imgs/prabu.jpg" alt="Prabu Kannan"
+            class="h-54 w-54 sm:h-80 sm:w-80 md:h-80 md:w-80 rounded-full object-cover border-8 border-white shadow-2xl">
+        </div>
+
+         <div class="flex gap-4 md:gap-7 flex-wrap justify-center">
+          <a href="https://www.facebook.com/rajraja.rajraja.758" target="_blank"
+            class="h-14 w-14 md:h-16 md:w-16 flex items-center justify-center bg-gradient-to-r from-gray-50 to-gray-100 hover:from-teal-50 hover:to-teal-100 rounded-full text-gray-700 hover:text-teal-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+            <i class="fa-brands fa-facebook-f text-xl md:text-2xl"></i>
+          </a>
+          <a href="https://x.com/PrabuKanna26482" target="_blank"
+            class="h-14 w-14 md:h-16 md:w-16 flex items-center justify-center bg-gradient-to-r from-gray-50 to-gray-100 hover:from-teal-50 hover:to-teal-100 rounded-full text-gray-700 hover:text-teal-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+            <i class="fa-brands fa-twitter text-xl md:text-2xl"></i>
+          </a>
+          <a href="https://www.instagram.com/mass_raja_vfc?igsh=MWFpMnNheGdqMTJydg==" target="_blank"
+            class="h-14 w-14 md:h-16 md:w-16 flex items-center justify-center bg-gradient-to-r from-gray-50 to-gray-100 hover:from-teal-50 hover:to-teal-100 rounded-full text-gray-700 hover:text-teal-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+            <i class="fa-brands fa-instagram text-xl md:text-2xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/prabu-kannan-986b5827b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            class="h-14 w-14 md:h-16 md:w-16 flex items-center justify-center bg-gradient-to-r from-gray-50 to-gray-100 hover:from-teal-50 hover:to-teal-100 rounded-full text-gray-700 hover:text-teal-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+            <i class="fa-brands fa-linkedin-in text-xl md:text-2xl"></i>
+          </a>
+          <a href="https://github.com/PrabuKannan18" target="_blank"
+            class="h-14 w-14 md:h-16 md:w-16 flex items-center justify-center bg-gradient-to-r from-gray-50 to-gray-100 hover:from-teal-50 hover:to-teal-100 rounded-full text-gray-700 hover:text-teal-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+            <i class="fa-brands fa-github text-xl md:text-2xl"></i>
+          </a>
+        </div>
+      </div>
     </div>
-
-
+  </div>
 </div>

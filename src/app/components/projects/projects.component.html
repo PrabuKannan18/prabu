@@ -1,112 +1,130 @@
-<div class="flex flex-col justify-center lg:flex-row">
-    <div class="mt-5 text-center">
-        <h1 class="text-4xl text-text-color font-bold">My Projects</h1>
-        <p class="text-text-sub-color text-base mt-2 mx-auto">
-            A curated collection of web and mobile applications showcasing my expertise in modern front-end development
-            and UI design.
-        </p>
-        <div class="grid grid-cols-1 justify-items-center md:grid-cols-2 gap-x-30 gap-y-10 px-2 lg:px-10 mt-6 ">
-            <div class="shadow-xl/50 flex flex-col max-w-sm">
-                <img src="imgs/product.png" class="h-38 w-full object-fill rounded-lg mb-4 " alt="Product Project">
+<div class="min-h-[calc(100vh-64px)]  py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Projects Header -->
+    <div class="text-center mb-8 sm:mb-12">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-2 sm:mb-3">My Projects</h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
+        A curated collection of web and mobile applications showcasing my expertise in modern front-end development
+        and UI design.
+      </p>
+    </div>
 
-                <h5 class="text-white text-2xl font-semibold m-2 flex items-start">Product Sale Website</h5>
-
-                <div class="flex gap-1 text-sm text-text-sub-color mb-4">
-                    <span class=" px-2 py-1 rounded">Bootstrap</span>
-                    <span class=" px-2 py-1 rounded">Angular</span>
-                    <span class=" px-2 py-1 rounded">Firebase</span>
-                </div>
-
-                <div class="flex justify-between ps-3 pe-3 pb-5">
-                    <a href="https://product-66ae3.web.app/" target="_blank"
-                        class="border border-purple-500 rounded-tl-xl rounded-br-xl p-2 hover:bg-purple-800 text-white">
-                        Live Demo
-                    </a>
-                    <a href="https://github.com/PrabuKannan18/product-management-app" target="_blank"
-                        class="border border-purple-500 rounded-tl-xl rounded-br-xl p-2 hover:bg-purple-800 text-white">
-                        View Source Code
-                    </a>
-                </div>
-            </div>
-            <div class="shadow-xl/30 flex flex-col max-w-xs">
-                <img src="imgs/whatsapp.png" class="h-38 w-full object-fill rounded-lg mb-4 " alt="whatsapp Clone">
-
-                <h5 class="text-white text-2xl font-semibold m-2 flex items-start">Whatsapp Clone</h5>
-
-                <div class="flex gap-1 text-sm text-text-sub-color mb-4">
-                    <span class=" px-2 py-1 rounded">Ionic</span>
-                    <span class=" px-2 py-1 rounded">Angular</span>
-                </div>
-
-                <div class="flex justify-between ps-3 pe-3 pb-5">
-                    <a href="https://whatsapp-f646c.web.app/" target="_blank"
-                        class="border border-purple-500 rounded-tl-xl rounded-br-xl p-2 hover:bg-purple-800 text-white">
-                        Live Demo
-                    </a>
-                    <a href="https://github.com/PrabuKannan18/Whatsapp" target="_blank"
-                        class="border border-purple-500 rounded-tl-xl rounded-br-xl p-2 hover:bg-purple-800 text-white">
-                        View Source Code
-                    </a>
-                </div>
-            </div>
-            <div class="shadow-xl/30 flex flex-col max-w-sm">
-                <img src="imgs/recipes.png" class="h-38 w-full object-fill rounded-lg mb-4 " alt="recipes">
-
-                <h5 class="text-white text-2xl font-semibold m-2 flex items-start">Recipes Website</h5>
-
-                <div class="flex gap-1 text-sm text-text-sub-color mb-4">
-                    <span class=" px-2 py-1 rounded">Ionic</span>
-                    <span class=" px-2 py-1 rounded">Angular</span>
-                    <span class=" px-2 py-1 rounded">Firebase</span>
-                </div>
-
-                <div class="flex justify-between ps-3 pe-3 pb-5">
-                    <a href="https://recipes-7a3da.firebaseapp.com/" target="_blank"
-                        class="border border-purple-500 rounded-tl-xl rounded-br-xl p-2 hover:bg-purple-800 text-white">
-                        Live Demo
-                    </a>
-                    <a href="https://github.com/PrabuKannan18/recipe-app" target="_blank"
-                        class="border border-purple-500 rounded-tl-xl rounded-br-xl p-2 hover:bg-purple-800 text-white">
-                        View Source Code
-                    </a>
-                </div>
-            </div>
-            <div class="shadow-xl/30 flex flex-col max-w-xs">
-                <img src="imgs/Food cart.png" class="h-38 w-full object-fill rounded-lg mb-4 " alt="Food Cart">
-
-                <h5 class="text-white text-2xl font-semibold m-2 flex items-start">Food cart Website</h5>
-
-                <div class="flex gap-1 text-sm text-text-sub-color mb-4">
-                    <span class=" px-2 py-1 rounded">Bootstrap</span>
-                    <span class=" px-2 py-1 rounded">React Js</span>
-                </div>
-
-                <div class="flex justify-between ps-3 pe-3 pb-5">
-                    <a href="https://prabukannan18.github.io/Food-cart/" target="_blank"
-                        class="border border-purple-500 rounded-tl-xl rounded-br-xl p-2 hover:bg-purple-800 text-white">
-                        Live Demo
-                    </a>
-                    <a href="https://github.com/PrabuKannan18/Food-cart" target="_blank"
-                        class="border border-purple-500 rounded-tl-xl rounded-br-xl p-2 hover:bg-purple-800 text-white">
-                        View Source Code
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-x-60 mt-8 lg:mt-10 mb-10">
-            <button routerLink="/"
-              class="text-xl text-white w-32 border border-purple-600 rounded-tl-2xl rounded-br-2xl px-6 py-2 hover:bg-purple-800 transition-colors duration-200">
-              Home
-            </button>
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+      <!-- Product Sale Website -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden hover:scale-[1.02] transition-all duration-300 border border-emerald-100">
+        <img src="imgs/product.png" class="h-40 sm:h-48 w-full object-cover" alt="Product Project">
+        <div class="p-4 sm:p-6">
+          <h5 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Product Sale Website</h5>
           
-            <a routerLink="/projects"
-              class="text-xl text-white hover:text-purple-400 font-semibold flex items-center transition-colors duration-200">
-              My Skills
-              <span class="material-icons ml-2 text-purple-400">
-                arrow_right_alt
-              </span>
+          <div class="flex flex-wrap gap-2 mb-3 sm:mb-5">
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Bootstrap</span>
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Angular</span>
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Firebase</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <a href="https://product-66ae3.web.app/" target="_blank"
+              class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-medium hover:opacity-90 transition-all text-center text-sm sm:text-base">
+              Live Demo
+            </a>
+            <a href="https://github.com/PrabuKannan18/product-management-app" target="_blank"
+              class="border border-emerald-600 text-emerald-600 px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-medium hover:bg-emerald-50 transition-all text-center text-sm sm:text-base">
+              View Code
             </a>
           </div>
+        </div>
+      </div>
+
+      <!-- Whatsapp Clone -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden hover:scale-[1.02] transition-all duration-300 border border-emerald-100">
+        <img src="imgs/whatsapp.png" class="h-40 sm:h-48 w-full object-cover" alt="Whatsapp Clone">
+        <div class="p-4 sm:p-6">
+          <h5 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Whatsapp Clone</h5>
+          
+          <div class="flex flex-wrap gap-2 mb-3 sm:mb-5">
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Ionic</span>
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Angular</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <a href="https://whatsapp-f646c.web.app/" target="_blank"
+              class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-medium hover:opacity-90 transition-all text-center text-sm sm:text-base">
+              Live Demo
+            </a>
+            <a href="https://github.com/PrabuKannan18/Whatsapp" target="_blank"
+              class="border border-emerald-600 text-emerald-600 px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-medium hover:bg-emerald-50 transition-all text-center text-sm sm:text-base">
+              View Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipes Website -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden hover:scale-[1.02] transition-all duration-300 border border-emerald-100">
+        <img src="imgs/recipes.png" class="h-40 sm:h-48 w-full object-cover" alt="Recipes">
+        <div class="p-4 sm:p-6">
+          <h5 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Recipes Website</h5>
+          
+          <div class="flex flex-wrap gap-2 mb-3 sm:mb-5">
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Ionic</span>
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Angular</span>
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Firebase</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <a href="https://recipes-7a3da.firebaseapp.com/" target="_blank"
+              class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-medium hover:opacity-90 transition-all text-center text-sm sm:text-base">
+              Live Demo
+            </a>
+            <a href="https://github.com/PrabuKannan18/recipe-app" target="_blank"
+              class="border border-emerald-600 text-emerald-600 px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-medium hover:bg-emerald-50 transition-all text-center text-sm sm:text-base">
+              View Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Food Cart Website -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden hover:scale-[1.02] transition-all duration-300 border border-emerald-100">
+        <img src="imgs/Food cart.png" class="h-40 sm:h-48 w-full object-cover" alt="Food Cart">
+        <div class="p-4 sm:p-6">
+          <h5 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Food Cart Website</h5>
+          
+          <div class="flex flex-wrap gap-2 mb-3 sm:mb-5">
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Bootstrap</span>
+            <span class="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">React Js</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <a href="https://prabukannan18.github.io/Food-cart/" target="_blank"
+              class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-medium hover:opacity-90 transition-all text-center text-sm sm:text-base">
+              Live Demo
+            </a>
+            <a href="https://github.com/PrabuKannan18/Food-cart" target="_blank"
+              class="border border-emerald-600 text-emerald-600 px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-medium hover:bg-emerald-50 transition-all text-center text-sm sm:text-base">
+              View Code
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex justify-center mt-7 md:mt-16 px-4">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4  w-full max-w-xl">
+        <button routerLink="/skills"
+          class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-medium hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg w-full sm:w-auto text-center">
+          Skills
+        </button>
+        <button routerLink="/contact"
+          class="flex items-center justify-center gap-2 sm:gap-3 text-teal-700 hover:text-teal-800 font-medium group w-full sm:w-auto">
+          <span class="text-base sm:text-lg">Contact Me</span>
+          <span class="flex items-center justify-center bg-teal-100 group-hover:bg-teal-200 h-10 sm:h-12 w-10 sm:w-12 rounded-full transition-all shadow-md">
+            <i class="fa-solid fa-arrow-right text-lg sm:text-xl text-teal-700"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

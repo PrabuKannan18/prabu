@@ -3,10 +3,10 @@
 @import "tailwindcss";
 
 @theme {
-    --color-background: #161A30;
+    /* --color-background: #161A30;
     --color-text-color: #B6BBC4;
     --color-text-sub-color: #94a3b8;
     --color-border: #F0ECE5;
     --color-hover: #31304D;
-    --font-sharetechmono: "Share Tech Mono", sans-serif
+    --font-sharetechmono: "Share Tech Mono", sans-serif */
 }

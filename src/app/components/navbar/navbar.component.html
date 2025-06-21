@@ -1,60 +1,98 @@
-<div class="sticky top-0 bg-background">
-    <div class="p-7 lg:ms-12  flex justify-between items-center  relative">
-            <button class="lg:hidden m-0 justify-start absolute z-51" (click)="isMenuOpen = !isMenuOpen">
-                    <span class="material-icons text-white text-4xl transition-transform duration-300"
-                            [ngClass]="{ 'rotate-180': isMenuOpen }">
-                            menu
-                    </span>
-            </button>
+<div class="sticky top-0 shadow-lg ">
+  <div class="p-8  flex justify-between items-center relative max-w-350 mx-auto">
+    <!-- Mobile menu button -->
+    <button class="lg:hidden m-0 justify-start absolute z-50" (click)="isMenuOpen = !isMenuOpen">
+      <span class="material-icons text-teal-600 text-4xl transition-transform duration-300"
+        [ngClass]="{ 'rotate-180': isMenuOpen }">
+        menu
+      </span>
+    </button>
 
-            <div class="ml-10">
-                    <a class="text-text-color text-2xl font-serif tracking-widest font-semibold" routerLink="/">Software Developer
-                    </a>
-            </div>
-
-            <ul class="hidden lg:flex gap-x-10 mr-40 text-lg text-text-color font-semibold ">
-                    <li><a routerLink="/" routerLinkActive="text-purple-400"
-                                    [routerLinkActiveOptions]="{ exact: true }"
-                                    class="hover:text-fuchsia-400">Home</a></li>
-                    <li><a routerLink="about" routerLinkActive="text-purple-400"
-                                    [routerLinkActiveOptions]="{ exact: true }"
-                                    class="hover:text-fuchsia-400">About</a></li>
-                    <li><a routerLink="skills" routerLinkActive="text-purple-400"
-                                    [routerLinkActiveOptions]="{ exact: true }"
-                                    class="hover:text-fuchsia-400">Skills</a></li>
-                    <li><a routerLink="projects" routerLinkActive="text-purple-400"
-                                    [routerLinkActiveOptions]="{ exact: true }"
-                                    class="hover:text-fuchsia-400">Projects</a></li>
-                    <li><a routerLink="contact" routerLinkActive="text-purple-400"
-                                    [routerLinkActiveOptions]="{ exact: true }"
-                                    class="hover:text-fuchsia-400">Contact</a></li>
-            </ul>
-
-            @if(isMenuOpen){
-            <div class="absolute top-0 left-0 w-full bg-background/50 backdrop-blur-xl text-white lg:hidden z-50 ">
-                    <ul class="flex flex-col gap-y-3 p-4 text-lg font-semibold ml-15">
-                            <li class="mt-15"><a routerLink="/" routerLinkActive="text-purple-400"
-                                            (click)="isMenuOpen = !isMenuOpen"
-                                            [routerLinkActiveOptions]="{ exact: true }"
-                                            class="hover:text-fuchsia-400">Home</a></li>
-                            <li><a routerLink="about" (click)="isMenuOpen = !isMenuOpen"
-                                            routerLinkActive="text-purple-400"
-                                            [routerLinkActiveOptions]="{ exact: true }"
-                                            class="hover:text-fuchsia-400">About</a></li>
-                            <li><a routerLink="skills" (click)="isMenuOpen = !isMenuOpen"
-                                            routerLinkActive="text-purple-400"
-                                            [routerLinkActiveOptions]="{ exact: true }"
-                                            class="hover:text-fuchsia-400">Skills</a></li>
-                            <li><a routerLink="projects" (click)="isMenuOpen = !isMenuOpen"
-                                            routerLinkActive="text-purple-400"
-                                            [routerLinkActiveOptions]="{ exact: true }"
-                                            class="hover:text-fuchsia-400">Projects</a></li>
-                            <li><a routerLink="contact" (click)="isMenuOpen = !isMenuOpen"
-                                            routerLinkActive="text-purple-400"
-                                            [routerLinkActiveOptions]="{ exact: true }"
-                                            class="hover:text-fuchsia-400">Contact</a></li>
-                    </ul>
-            </div>
-            }
+    <!-- Logo Text -->
+    <div class="lg:absolute lg:left-4">
+      <a class="text-teal-600 text-2xl ms-15 font-serif tracking-widest font-semibold" routerLink="/">Software
+        Developer</a>
     </div>
+
+    <!-- Desktop Navigation - Centered -->
+    <ul class="hidden lg:flex gap-x-10 text-lg text-black font-medium mx-auto">
+      <li>
+        <a routerLink="/" routerLinkActive="text-teal-600" #rlaHome="routerLinkActive"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaHome.isActive }"
+          class="transition-all duration-300 inline-block">
+          Home
+        </a>
+      </li>
+      <li>
+        <a routerLink="/about" routerLinkActive="text-teal-600" #rlaAbout="routerLinkActive"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaAbout.isActive }"
+          class="transition-all duration-300 inline-block">
+          About
+        </a>
+      </li>
+      <li>
+        <a routerLink="/skills" routerLinkActive="text-teal-600" #rlaSkills="routerLinkActive"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaSkills.isActive }"
+          class="transition-all duration-300 inline-block">
+          Skills
+        </a>
+      </li>
+      <li>
+        <a routerLink="/projects" routerLinkActive="text-teal-600" #rlaProjects="routerLinkActive"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaProjects.isActive }"
+          class="transition-all duration-300 inline-block">
+          Projects
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="text-teal-600" #rlaContact="routerLinkActive"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaContact.isActive }"
+          class="transition-all duration-300 inline-block">
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    <!-- Enquiry Button -->
+    <div class="hidden lg:block lg:absolute lg:right-4">
+      <button routerLink="/contact" routerLinkActive="text-teal-600"
+        class="bg-teal-600 hover:text-white hover:scale-105 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 ">
+        Enquiry Now
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    @if (isMenuOpen) {
+    <div class="absolute top-0 left-0 w-full bg-gray-400/95 backdrop-blur-xl text-white lg:hidden z-40 pt-16">
+      <ul class="flex flex-col gap-y-4 p-6 text-lg font-semibold">
+        <li><a routerLink="/" routerLinkActive="text-teal-600" (click)="isMenuOpen = !isMenuOpen"
+            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">Home</a>
+        </li>
+        <li><a routerLink="/about" (click)="isMenuOpen = !isMenuOpen" routerLinkActive="text-teal-600"
+            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">About</a>
+        </li>
+        <li><a routerLink="/skills" (click)="isMenuOpen = !isMenuOpen" routerLinkActive="text-teal-600"
+            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">Skills</a>
+        </li>
+        <li><a routerLink="/projects" (click)="isMenuOpen = !isMenuOpen" routerLinkActive="text-teal-600"
+            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">Projects</a>
+        </li>
+        <li><a routerLink="/contact" (click)="isMenuOpen = !isMenuOpen" routerLinkActive="text-teal-600"
+            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">Contact</a>
+        </li>
+        <li class="mt-4">
+          <button
+            class="bg-teal-600 hover:text-white hover:scale-105 text-white font-semibold py-2 px-6 rounded-full w-full transition-all duration-300">
+            Enquiry Now
+          </button>
+        </li>
+      </ul>
+    </div>
+    }
+  </div>
 </div>

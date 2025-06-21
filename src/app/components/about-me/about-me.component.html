@@ -1,90 +1,124 @@
-<div class="flex flex-col items-center justify-center mt-10 gap-6">
-    <div class="flex items-center gap-4">
-        <div class="w-20 h-px bg-text-sub-color lg:w-100"></div>
-        <h1 class="text-3xl text-text-color whitespace-nowrap">About Me</h1>
-        <div class="w-20 h-px bg-text-sub-color lg:w-100"></div>
-    </div>
+<div class="min-h-[calc(100vh-64px)] py-10 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- About Me Header -->
+    <div class="flex flex-col items-center justify-center gap-6 md:gap-8">
+      <div class="flex items-center gap-4 md:gap-6 w-full max-w-3xl px-4">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent to-teal-500"></div>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 whitespace-nowrap">About Me</h1>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent to-teal-500"></div>
+      </div>
 
-    <div class="text-center max-w-xl mt-10">
-        <h2 class="text-3xl font-semibold text-text-color mb-2">I'm Prabu Kannan</h2>
-        <p class="text-base text-text-sub-color mx-3 lg:text-lg">
-            I'm a creative front-end developer passionate about building responsive and user-friendly web interfaces.
+      <div class="text-center max-w-2xl px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4">I'm Prabu Kannan</h2>
+        <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+          I'm a creative front-end developer passionate about building responsive and user-friendly web interfaces with
+          Angular and Ionic.
         </p>
+      </div>
     </div>
 
-    <div class="md:w-full">
-      <h2 class="text-center text-3xl text-purple-400 font-extrabold mt-10">Education</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-8 lg:ms-10 lg:me-10 ">
-        <div class="shadow-[0_0_10px_#a855f7] rounded-xl p-6 m-2 hover:scale-105 transition-transform duration-300  ">
-          <h3 class="text-2xl text-center text-text-color font-black">Secondary School</h3>
-          <h4 class="xl text-text-color  font-extrabold mt-3">Sivanthi Matric Higher Secondary School</h4>
-          <h5 class="text-text-sub-color font-semibold mt-3">2017-2028</h5>
-          <h5 class="text-text-sub-color font-medium mt-3">Percentage: 84.2%</h5>
+    <!-- Experience Section -->
+    <div class="mt-12 md:mt-16 px-4">
+      <h1 class="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-teal-600 mb-8 md:mb-12">Experience</h1>
+
+      <div
+        class="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto hover:shadow-xl transition-shadow duration-300 ">
+        <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 text-center">Associate Software Engineer</h2>
+        <p class="text-lg md:text-xl text-gray-700 font-semibold mt-4 md:mt-6 text-center">Adaptive Development Private
+          Limited, Tirunelveli</p>
+        <p class="text-lg md:text-xl text-teal-600 font-semibold mt-3 md:mt-4 text-center">August 2024 – Present</p>
+      </div>
+
+      <div class="mt-12 md:mt-20">
+        <h3 class="text-2xl md:text-3xl font-bold text-teal-600 text-center mb-8 md:mb-12">🚀 Projects Worked On</h3>
+
+        <div
+          class="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto mb-8 md:mb-12 hover:scale-[1.02] transition-all duration-300 ">
+          <h4 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-4 md:mb-6">Pet Care
+            Application</h4>
+          <ul class="list-disc list-outside text-gray-700 text-base md:text-lg space-y-3 md:space-y-4 pl-5 md:pl-6">
+            <li>Made it easy for pet owners to save and manage vet records using a unique email and one-tap import.</li>
+            <li>Helped users scan pet passports and store travel info like vaccines and microchip details in one place.
+            </li>
+            <li>Added emergency tools to find nearby vets fast, get first-aid tips, and share pet info instantly.</li>
+            <li>Used smart AI to answer pet health questions and even scan poop to check for early health issues.</li>
+          </ul>
         </div>
-    
-    
-        <div class="shadow-[0_0_10px_#a855f7] rounded-xl p-6 m-2 hover:scale-105 transition-transform duration-300 ">
-          <h3 class="text-2xl text-center text-text-color font-black">Higher SECONDARY</h3>
-          <h4 class="xl text-text-color font-extrabold mt-3">Sivanthi Matric Higher Secondary School</h4>
-          <h5 class="text-text-sub-color font-semibold mt-3">2019 - 2020</h5>
-          <h5 class="text-text-sub-color font-medium mt-3">Percentage: 68.4%</h5>
-        </div>
-    
-        <div class="shadow-[0_0_10px_#a855f7] rounded-xl p-6 m-2 hover:scale-105 me-5 transition-transform duration-300 ">
-          <h3 class="text-2xl text-center text-text-color font-black">Under Graduation</h3>
-          <h4 class="xl text-text-color font-extrabold mt-3">Francis Xavier Engineering College</h4>
-          <h5 class="text-text-sub-color font-semibold mt-3">2020 - 2024</h5>
-          <h5 class="text-text-sub-color font-medium mt-3">B.E Mechanical Engineering: <span>8.41 CGPA</span></h5>
+
+        <div
+          class="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto hover:scale-[1.02] transition-all duration-300 ">
+          <h4 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-4 md:mb-6">Asisa Insurance
+            Website</h4>
+          <ul class="list-disc list-outside text-gray-700 text-base md:text-lg space-y-3 md:space-y-4 pl-5 md:pl-6">
+            <li>Created a smooth insurance sign-up experience for users living in Spain through the ASISA website.</li>
+            <li>Users can choose a health insurance plan based on their needs and see the best available pricing offers.
+            </li>
+            <li>Made the process easy with step-by-step guidance and clear comparison of plan benefits.</li>
+            <li>Focused on making health coverage simple, fast, and fully online for non-Spanish residents in Spain.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <div>
-        <h1 class="text-center text-3xl text-purple-400 font-extrabold mt-10">Experience</h1>
+    <!-- Education Section -->
+    <div class="mt-12 md:mt-20 w-full px-4">
+      <h2 class="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-teal-600 mb-8 md:mb-12">Education</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
         <div
-          class="shadow-[0_0_15px_#a855f7] max-w-sm rounded-xl p-6 h-auto w-full md:max-w-2xl mx-auto hover:shadow-[0_0_20px_#a855f7] hover:scale-105 transition-transform duration-300 mt-10">
-          <h2 class="text-xl text-text-sub-color font-extrabold text-center">Associate Software Engineer</h2>
-          <p class="text-xl text-text-sub-color font-bold mt-5">Adaptive Development Private Limited, Tirunelveli</p>
-          <p class="text-xl text-text-sub-color font-bold mt-3">August 2024 – Present</p>
-        
+          class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 border border-emerald-100">
+          <h3 class="text-xl md:text-2xl font-bold text-center text-gray-800 mb-3 md:mb-4">Secondary School</h3>
+          <h4 class="text-lg md:text-xl font-semibold text-emerald-600 text-center">Sivanthi Matric Higher Secondary
+            School</h4>
+          <div class="mt-3 md:mt-4 text-center space-y-2">
+            <p class="text-gray-600 font-medium">2017 - 2018</p>
+            <p class="text-gray-700 font-semibold">Percentage: 84.2%</p>
+          </div>
         </div>
 
-        <div class="mt-16 px-4">
-            <h3 class="text-xl font-extrabold text-purple-400 text-center mb-10">🚀 Projects Worked On</h3>
-          
-            <div class="shadow-[0_0_15px_#a855f7] rounded-xl p-6 max-w-2xl mx-auto mb-10 hover:scale-[1.02] transition-all duration-300">
-              <h4 class="text-2xl text-purple-300 font-bold text-center"> Pet Parent </h4>
-              <ul class="list-decimal list-inside text-text-sub-color text-lg font-semibold mt-3">
-                <li>Made it easy for pet owners to save and manage vet records using a unique email and one-tap import.</li>
-                <li class="mt-3">Helped users scan pet passports and store travel info like vaccines and microchip details in one place.</li>
-                <li class="mt-3">Added emergency tools to find nearby vets fast, get first-aid tips, and share pet info instantly.</li>
-                <li class="mt-3">Used smart AI to answer pet health questions and even scan poop to check for early health issues.</li>
-              </ul>
-            </div>
-          
-            <div class=" shadow-[0_0_15px_#a855f7] rounded-xl p-6 max-w-2xl mx-auto  hover:scale-[1.02] transition-all duration-300">
-              <h4 class="text-2xl text-purple-300 font-bold text-center">Safe In Spain </h4>
-              <ul class="list-decimal list-inside text-text-sub-color text-lg font-semibold mt-3">
-                <li>Created a smooth insurance sign-up experience for users living in Spain through the ASISA website.</li>
-                <li class="mt-3">Users can choose a health insurance plan based on their needs and see the best available pricing offers.</li>
-                <li class="mt-3">Made the process easy with step-by-step guidance and clear comparison of plan benefits.</li>
-                <li class="mt-3">Focused on making health coverage simple, fast, and fully online for non-Spanish residents in Spain.</li>
-              </ul>
-            </div>
+        <div
+          class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 border border-emerald-100">
+          <h3 class="text-xl md:text-2xl font-bold text-center text-gray-800 mb-3 md:mb-4">Higher Secondary</h3>
+          <h4 class="text-lg md:text-xl font-semibold text-emerald-600 text-center">Sivanthi Matric Higher Secondary
+            School</h4>
+          <div class="mt-3 md:mt-4 text-center space-y-2">
+            <p class="text-gray-600 font-medium">2019 - 2020</p>
+            <p class="text-gray-700 font-semibold">Percentage: 68.4%</p>
           </div>
-          
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 border border-emerald-100">
+          <h3 class="text-xl md:text-2xl font-bold text-center text-gray-800 mb-3 md:mb-4">Under Graduation</h3>
+          <h4 class="text-lg md:text-xl font-semibold text-emerald-600 text-center">Francis Xavier Engineering College
+          </h4>
+          <div class="mt-3 md:mt-4 text-center space-y-2">
+            <p class="text-gray-600 font-medium">2020 - 2024</p>
+            <p class="text-gray-700 font-semibold">B.E Mechanical Engineering: 8.41 CGPA</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="flex flex-col gap-8 lg:gap-x-60 lg:mt-10 lg:flex-row mb-10">
+    <!-- Navigation Buttons -->
+    <div class="flex justify-center mt-7 md:mt-16 px-4">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4  w-full max-w-xl">
         <button routerLink="/"
-            class="text-xl text-white border border-purple-600 rounded-tl-2xl rounded-br-2xl px-6 py-2 hover:bg-purple-800">
-           Home
+          class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-4 sm:px-6 md:px-8 py-2 md:py-3 rounded-lg text-sm sm:text-base md:text-lg font-medium hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl w-fit text-center">
+          Home
         </button>
 
-        <a routerLink="/projects" class="text-xl text-white hover:text-purple-400 font-semibold flex items-center">My Skills
-          <span class="material-icons ml-2 text-purple-400">
-            arrow_right_alt
-            </span>
-          </a>
+        <button routerLink="/skills"
+          class="flex items-center justify-center gap-2 sm:gap-3 text-teal-700 hover:text-teal-800 font-medium group w-full sm:w-auto">
+        
+          <span class="text-sm sm:text-base md:text-lg">My Skills</span>
+            <span
+            class="flex items-center justify-center bg-teal-100 group-hover:bg-teal-200 h-8 sm:h-10 md:h-12 w-8 sm:w-10 md:w-12 rounded-full transition-all shadow-md">
+            <i class="fa-solid fa-arrow-right text-base sm:text-lg md:text-xl text-teal-700"></i>
+          </span>
+        </button>
+      </div>
     </div>
+  </div>
 </div>

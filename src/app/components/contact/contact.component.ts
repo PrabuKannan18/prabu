@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
-import { CommonModule } from '@angular/common'; 
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AgentService } from '../../agent.service';
 
 @Component({
   selector: 'app-contact',
-  standalone: true, 
-  imports: [CommonModule, FormsModule], 
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
@@ -24,5 +25,15 @@ export class ContactComponent {
     } else {
       alert("Please fill all fields correctly.");
     }
+  }
+
+  constructor(private agentService: AgentService) { }
+
+  ionViewDidEnter() {
+    this.agentService.logAnalyticsEvent('screen_view', {
+      screen_id: 'app-contact',
+      screen_class: 'ContactComponent',
+      screen_type: 'Page'
+    })
   }
 }

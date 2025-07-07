@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AgentService } from '../../agent.service';
 // import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(private agentService: AgentService) { }
+
+  ngOnInit() {
+    this.agentService.logAnalyticsEvent('web_initialized', {
+      screen_id: 'app-home',
+      screen_class: 'AppHome',
+      screen_type: 'Page'
+    })
+  }
 }

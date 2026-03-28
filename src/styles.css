@@ -1,12 +1,161 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-    /* --color-background: #161A30;
-    --color-text-color: #B6BBC4;
-    --color-text-sub-color: #94a3b8;
-    --color-border: #F0ECE5;
-    --color-hover: #31304D;
-    --font-sharetechmono: "Share Tech Mono", sans-serif */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --color-primary: #9b51e0;
+  --color-secondary: #f43f5e;
+}
+
+:root {
+  --primary: #9b51e0;
+  --secondary: #f43f5e;
+  --bg: #020617;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass: #020617ef;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='light'] {
+  --primary: #7c3aed;
+  --secondary: #e11d48;
+  --bg: #ffffff;
+  --text-main: #020617;
+  --text-muted: #64748b;
+  --glass: #fffffff8;
+  --glass-border: rgba(124, 58, 237, 0.15);
+  --bg-card: #f8fafc;
+  --shadow-premium: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  body {
+    background-color: var(--bg) !important;
+    color: var(--text-main);
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.5s ease;
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .text-main { color: var(--text-main); }
+  .text-muted { color: var(--text-muted); }
+
+  section {
+    scroll-margin-top: 5rem; /* Ensures sections land below the fixed navbar */
+  }
+
+  .glass {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+  }
+ 
+  /* For elements outside navbar that still need blur, we'll keep a general glass-blur utility */
+  .glass-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 4px 20px rgba(155, 81, 224, 0.15);
+  }
+}
+
+/* Tightened Spacing Utilities */
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.hero-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Stunning Animations */
+.animate-in {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.fade-in { animation-name: fadeIn; }
+.zoom-in { animation-name: zoomIn; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: reveal 0.6s ease-out forwards;
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+  border: 2px solid var(--bg);
+}
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #334155;
 }

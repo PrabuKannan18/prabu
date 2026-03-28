@@ -1,6 +1,13 @@
-<div class="min-h-screen bg-gray-100/75 flex flex-col font-sans">
-  <app-navbar></app-navbar>
-  <main class="flex-1 max-w-350 mx-auto">
-    <router-outlet></router-outlet>
+<div class="min-h-screen flex flex-col font-sans selection:bg-violet-500/30 selection:text-white bg-bg-deep overflow-x-hidden">
+  <!-- Fixed Navigation -->
+  <app-navbar class="fixed top-0 left-0 w-full z-[100]"></app-navbar>
+
+  <main class="flex-1 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-20">
+    <!-- Single Page Scrolling Sections -->
+    <app-home></app-home>
+    <app-about-me></app-about-me>
+    <app-skills></app-skills>
+    <app-projects></app-projects>
+    <app-contact></app-contact>
   </main>
 </div>

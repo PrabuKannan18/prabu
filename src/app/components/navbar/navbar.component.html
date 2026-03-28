@@ -1,98 +1,85 @@
-<div class="sticky top-0 shadow-lg ">
-  <div class="p-7  flex justify-between items-center relative max-w-350 mx-auto">
-    <!-- Mobile menu button -->
-    <button class="lg:hidden m-0  justify-start absolute z-50" (click)="isMenuOpen = !isMenuOpen">
-      <span class="material-icons text-teal-600 text-4xl transition-transform duration-300"
-        [ngClass]="{ 'rotate-180': isMenuOpen }">
-        menu
-      </span>
-    </button>
+<nav class="glass border-b border-white/5 shadow-premium">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#home" class="text-2xl font-black uppercase tracking-tighter group flex items-center gap-2">
+      <div class="h-9 w-9 bg-primary rounded-xl flex items-center justify-center text-white shadow-glow group-hover:rotate-12 transition-transform duration-500">
+        P
+      </div>
+      <span class="text-main group-hover:text-primary transition-all duration-500">RABU.</span>
+    </a>
 
-    <!-- Logo Text -->
-    <div class="lg:absolute lg:left-4">
-      <a class="text-teal-600 text-xl ms-8 font-serif tracking-widest font-semibold" routerLink="/">Software
-        Developer</a>
+    <!-- Desktop Nav: Linked to Sections -->
+    <div class="hidden lg:flex items-center gap-8">
+      <ul class="flex items-center gap-6">
+        <li><a href="#home" class="text-[10px] font-black uppercase tracking-[0.2em] text-muted hover:text-main transition-all">Home</a></li>
+        <li><a href="#about" class="text-[10px] font-black uppercase tracking-[0.2em] text-muted hover:text-main transition-all">About</a></li>
+        <li><a href="#skills" class="text-[10px] font-black uppercase tracking-[0.2em] text-muted hover:text-main transition-all">Skills</a></li>
+        <li><a href="#projects" class="text-[10px] font-black uppercase tracking-[0.2em] text-muted hover:text-main transition-all">Projects</a></li>
+      </ul>
+
+      <!-- Simple Premium Theme Toggle -->
+      <button (click)="toggleTheme()" 
+              class="h-10 w-10 glass rounded-xl flex items-center justify-center hover:shadow-glow transition-all active:scale-90 border-white/10 group/toggle">
+        <div class="relative h-5 w-5 flex items-center justify-center">
+          @if (currentTheme === 'dark') {
+            <div class="animate-in fade-in zoom-in duration-300 text-primary">
+               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/><path d="M20 3v4"/><path d="M22 5h-4"/></svg>
+            </div>
+          } @else {
+            <div class="animate-in fade-in zoom-in duration-300 text-yellow-500">
+               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </div>
+          }
+        </div>
+      </button>
+      
+      <a href="#contact" 
+              class="px-6 py-3 bg-primary text-white text-[9px] font-black uppercase tracking-[0.2em] rounded-xl shadow-glow hover:translate-y-[-2px] transition-all active:scale-95">
+        Let's Connect
+      </a>
     </div>
 
-    <!-- Desktop Navigation - Centered -->
-    <ul class="hidden lg:flex gap-x-10 text-lg text-black font-medium mx-auto">
-      <li>
-        <a routerLink="/" routerLinkActive="text-teal-600" #rlaHome="routerLinkActive"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaHome.isActive }"
-          class="transition-all duration-300 inline-block">
-          Home
-        </a>
-      </li>
-      <li>
-        <a routerLink="/about" routerLinkActive="text-teal-600" #rlaAbout="routerLinkActive"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaAbout.isActive }"
-          class="transition-all duration-300 inline-block">
-          About
-        </a>
-      </li>
-      <li>
-        <a routerLink="/skills" routerLinkActive="text-teal-600" #rlaSkills="routerLinkActive"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaSkills.isActive }"
-          class="transition-all duration-300 inline-block">
-          Skills
-        </a>
-      </li>
-      <li>
-        <a routerLink="/projects" routerLinkActive="text-teal-600" #rlaProjects="routerLinkActive"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaProjects.isActive }"
-          class="transition-all duration-300 inline-block">
-          Projects
-        </a>
-      </li>
-      <li>
-        <a routerLink="/contact" routerLinkActive="text-teal-600" #rlaContact="routerLinkActive"
-          [routerLinkActiveOptions]="{ exact: true }"
-          [ngClass]="{ 'hover:text-teal-600 hover:scale-105': !rlaContact.isActive }"
-          class="transition-all duration-300 inline-block">
-          Contact
-        </a>
-      </li>
-    </ul>
+    <!-- Mobile Controls -->
+    <div class="flex items-center gap-3 lg:hidden">
+      <button (click)="toggleTheme()" class="h-10 w-10 glass rounded-xl flex items-center justify-center border-white/10">
+        <div class="relative h-4 w-4 flex items-center justify-center">
+          @if (currentTheme === 'dark') {
+            <div class="animate-in fade-in zoom-in duration-300 text-primary">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/><path d="M20 3v4"/><path d="M22 5h-4"/></svg>
+            </div>
+          } @else {
+            <div class="animate-in fade-in zoom-in duration-300 text-yellow-500">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </div>
+          }
+        </div>
+      </button>
 
-    <!-- Enquiry Button -->
-    <div class="hidden lg:block lg:absolute lg:right-30">
-      <button routerLink="/contact" routerLinkActive="text-teal-600"
-        class="bg-gradient-to-r from-emerald-600 to-teal-700 hover:text-white hover:scale-105 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 ">
-        Enquiry Now
+      <button class="h-10 w-10 glass rounded-xl flex items-center justify-center text-muted border-white/10" (click)="isMenuOpen = !isMenuOpen">
+        @if (!isMenuOpen) {
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        } @else {
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+        }
       </button>
     </div>
+  </div>
 
-    <!-- Mobile Menu -->
-    @if (isMenuOpen) {
-    <div class="absolute top-0 left-0 w-full bg-gray-400/95 backdrop-blur-xl text-white lg:hidden z-40 pt-16">
-      <ul class="flex flex-col gap-y-4 p-6 text-lg font-semibold">
-        <li><a routerLink="/" routerLinkActive="text-teal-600" (click)="isMenuOpen = !isMenuOpen"
-            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">Home</a>
-        </li>
-        <li><a routerLink="/about" (click)="isMenuOpen = !isMenuOpen" routerLinkActive="text-teal-600"
-            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">About</a>
-        </li>
-        <li><a routerLink="/skills" (click)="isMenuOpen = !isMenuOpen" routerLinkActive="text-teal-600"
-            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">Skills</a>
-        </li>
-        <li><a routerLink="/projects" (click)="isMenuOpen = !isMenuOpen" routerLinkActive="text-teal-600"
-            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">Projects</a>
-        </li>
-        <li><a routerLink="/contact" (click)="isMenuOpen = !isMenuOpen" routerLinkActive="text-teal-600"
-            [routerLinkActiveOptions]="{ exact: true }" class="hover:text-teal-600 hover:scale-105 block py-2">Contact</a>
-        </li>
-        <li class="mt-4">
-          <button
-            class="bg-gradient-to-r from-emerald-600 to-teal-700 hover:text-white hover:scale-105 text-white font-semibold py-2 px-6 rounded-full w-full transition-all duration-300">
-            Enquiry Now
-          </button>
+  <!-- Mobile Menu -->
+  @if (isMenuOpen) {
+    <div class="lg:hidden absolute top-full left-0 w-full glass border-b border-white/5 animate-fade-in-up shadow-premium">
+      <ul class="p-8 space-y-6">
+        <li><a href="#home" (click)="isMenuOpen = false" class="text-[10px] font-black uppercase tracking-[0.2em] block text-main">Home</a></li>
+        <li><a href="#about" (click)="isMenuOpen = false" class="text-[10px] font-black uppercase tracking-[0.2em] block text-main">About</a></li>
+        <li><a href="#skills" (click)="isMenuOpen = false" class="text-[10px] font-black uppercase tracking-[0.2em] block text-main">Skills</a></li>
+        <li><a href="#projects" (click)="isMenuOpen = false" class="text-[10px] font-black uppercase tracking-[0.2em] block text-main">Projects</a></li>
+        <li class="pt-6 border-t border-white/5">
+          <a href="#contact" (click)="isMenuOpen = false"
+                  class="block w-full text-center py-4 bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl shadow-glow">
+            Start Collaboration
+          </a>
         </li>
       </ul>
     </div>
-    }
-  </div>
-</div>
+  }
+</nav>

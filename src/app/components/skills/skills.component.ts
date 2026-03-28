@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { AgentService } from '../../agent.service';
 
 @Component({
   selector: 'app-skills',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })

@@ -4,7 +4,7 @@ import { AgentService } from '../../agent.service';
 
 @Component({
   selector: 'app-projects',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })

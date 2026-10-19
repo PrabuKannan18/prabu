@@ -1,95 +1,264 @@
-<section id="contact" class="max-w-6xl mx-auto px-6 pt-6 pb-12 reveal space-y-8">
+<section 
+  id="contact" 
+  #contactSection
+  class="max-w-6xl mx-auto px-6 section-padding relative overflow-hidden"
+  [class.section-visible]="isVisible">
+
   <!-- Minimalist Header -->
-  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/5 pb-6">
-    <div class="space-y-1">
-      <h2 class="text-primary font-bold tracking-[0.2em] uppercase text-[9px]">Communication Hub</h2>
-      <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-main">Let's <span class="text-gradient">Connect</span></h1>
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8 mb-12">
+    <div class="space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-cyan-500/20 text-cyan-400 font-bold text-[9px] uppercase tracking-[0.25em]">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        Direct Collaboration
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-main font-display">
+        Let's <span class="text-gradient">Connect</span>
+      </h1>
+      
+      <p class="text-muted max-w-xl text-base sm:text-lg font-medium leading-relaxed">
+        Have an upcoming project, open role, or technical inquiry? Reach out and let's craft something exceptional.
+      </p>
     </div>
-    <p class="text-muted max-w-[300px] text-[10px] font-bold uppercase tracking-widest leading-relaxed">
-      Ready to architect high-performance front-end solutions for your next enterprise venture.
-    </p>
+
+    <!-- Availability Chip -->
+    <div class="glass px-4 py-2.5 rounded-2xl border border-white/10 flex items-center gap-3 self-start md:self-end">
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+      </span>
+      <span class="text-[10px] font-black uppercase tracking-wider text-main">Response time &lt; 24h</span>
+    </div>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-    <!-- Quick Access Matrix: Ultra-Tight -->
-    <div class="lg:col-span-4 space-y-4">
-      <div class="glass-card p-6 space-y-6 shadow-premium border-l-4 border-primary">
-        <div class="space-y-4">
-          <a href="mailto:prabukannanofficial@gmail.com" class="flex items-center gap-4 group">
-            <div class="h-10 w-10 glass rounded-xl flex items-center justify-center shadow-glow group-hover:scale-110 transition-all text-primary">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    
+    <!-- Quick Access Channels (5 cols) -->
+    <div class="lg:col-span-5 space-y-6">
+      
+      <!-- Direct Contact Channels -->
+      <div class="glass-card p-6 md:p-8 space-y-6">
+        <h3 class="text-xs font-black uppercase tracking-[0.25em] text-muted">
+          Contact Channels
+        </h3>
+
+        <!-- Email -->
+        <div class="flex items-center justify-between group p-3 rounded-2xl hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
+          <a href="mailto:prabukannanofficial@gmail.com" class="flex items-center gap-4 flex-1 min-w-0">
+            <div class="w-11 h-11 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-envelope text-lg"></i>
             </div>
-            <div class="flex-1 overflow-hidden">
-               <p class="text-[9px] font-black uppercase tracking-widest text-muted">Direct Email</p>
-               <p class="text-[11px] font-bold text-main truncate">prabukannanofficial&#64;gmail.com</p>
+            <div class="truncate">
+              <p class="text-[9px] font-black uppercase tracking-wider text-muted">Direct Email</p>
+              <p class="text-xs sm:text-sm font-bold text-main truncate hover:text-cyan-400 transition-colors">
+                prabukannanofficial&#64;gmail.com
+              </p>
             </div>
           </a>
-          
-          <a href="tel:+919360212949" class="flex items-center gap-4 group">
-            <div class="h-10 w-10 glass rounded-xl flex items-center justify-center shadow-glow group-hover:scale-110 transition-all text-[#3880FF]">
+          <button 
+            (click)="copyToClipboard('prabukannanofficial@gmail.com', 'email')" 
+            [attr.aria-label]="'Copy email address'"
+            class="px-2.5 py-1.5 rounded-lg glass text-[9px] font-bold text-muted hover:text-cyan-400 hover:border-cyan-400/40 transition-all ml-2 flex items-center gap-1">
+            @if (copiedItem === 'email') {
+              <i class="fa-solid fa-check text-emerald-400"></i>
+              <span class="text-emerald-400">Copied</span>
+            } @else {
+              <i class="fa-regular fa-copy"></i>
+              <span>Copy</span>
+            }
+          </button>
+        </div>
+
+        <!-- Phone -->
+        <div class="flex items-center justify-between group p-3 rounded-2xl hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
+          <a href="tel:+919360212949" class="flex items-center gap-4 flex-1 min-w-0">
+            <div class="w-11 h-11 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-phone text-lg"></i>
             </div>
             <div>
-               <p class="text-[9px] font-black uppercase tracking-widest text-muted">Voice Hub</p>
-               <p class="text-[11px] font-bold text-main">+91 9360212949</p>
+              <p class="text-[9px] font-black uppercase tracking-wider text-muted">Direct Voice</p>
+              <p class="text-xs sm:text-sm font-bold text-main hover:text-cyan-400 transition-colors">
+                +91 9360212949
+              </p>
             </div>
           </a>
-          
-          <div class="flex items-center gap-4 group">
-            <div class="h-10 w-10 glass rounded-xl flex items-center justify-center shadow-glow text-orange-500">
-              <i class="fa-solid fa-location-dot text-lg"></i>
-            </div>
-            <div>
-               <p class="text-[9px] font-black uppercase tracking-widest text-muted">Geographic Hub</p>
-               <p class="text-[11px] font-bold text-main">Tamil Nadu, India</p>
-            </div>
+          <button 
+            (click)="copyToClipboard('+919360212949', 'phone')" 
+            [attr.aria-label]="'Copy phone number'"
+            class="px-2.5 py-1.5 rounded-lg glass text-[9px] font-bold text-muted hover:text-cyan-400 hover:border-cyan-400/40 transition-all ml-2 flex items-center gap-1">
+            @if (copiedItem === 'phone') {
+              <i class="fa-solid fa-check text-emerald-400"></i>
+              <span class="text-emerald-400">Copied</span>
+            } @else {
+              <i class="fa-regular fa-copy"></i>
+              <span>Copy</span>
+            }
+          </button>
+        </div>
+
+        <!-- Location -->
+        <div class="flex items-center gap-4 p-3">
+          <div class="w-11 h-11 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400">
+            <i class="fa-solid fa-location-dot text-lg"></i>
           </div>
+          <div>
+            <p class="text-[9px] font-black uppercase tracking-wider text-muted">Geographic Base</p>
+            <p class="text-xs sm:text-sm font-bold text-main">Tamil Nadu, India</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social Matrix -->
+      <div class="glass-card p-6 flex justify-between items-center">
+        <div>
+          <h4 class="text-xs font-black uppercase tracking-[0.2em] text-main">Digital Footprint</h4>
+          <p class="text-[9px] font-bold uppercase tracking-wider text-muted">Connect on Social Platforms</p>
+        </div>
+
+        <div class="flex gap-4">
+          <a 
+            href="https://github.com/PrabuKannan18" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="GitHub Profile"
+            class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-muted hover:text-white hover:border-white/30 transition-all hover:scale-110">
+            <i class="fa-brands fa-github text-lg"></i>
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/prabu-kannan-986b5827b" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="LinkedIn Profile"
+            class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-muted hover:text-[#3880FF] hover:border-[#3880FF]/30 transition-all hover:scale-110">
+            <i class="fa-brands fa-linkedin text-lg"></i>
+          </a>
+          <a 
+            href="https://www.instagram.com/p_r_a_b_u_2_k_2" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Instagram Profile"
+            class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center text-muted hover:text-rose-400 hover:border-rose-400/30 transition-all hover:scale-110">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
         </div>
       </div>
 
-      <div class="glass-card p-6 flex justify-between items-center shadow-premium bg-white/[0.01]">
-         <div class="flex gap-4">
-            <a href="https://github.com/PrabuKannan18" class="text-muted hover:text-main transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
-            <a href="https://www.linkedin.com/in/prabu-kannan-986b5827b" class="text-muted hover:text-[#3880FF] transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
-            <a href="https://www.instagram.com/p_r_a_b_u_2_k_2" class="text-muted hover:text-rose-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
-         </div>
-         <span class="text-[9px] font-black uppercase tracking-widest text-muted">Social Matrix</span>
-      </div>
     </div>
 
-    <!-- Transmission Terminal -->
-    <div class="lg:col-span-8">
-      <div class="glass-card p-6 md:p-8 shadow-premium border-white/5 relative overflow-hidden group">
-        <form #contactForm="ngForm" action="https://formsubmit.co/prabukannanofficial@gmail.com" method="POST" (ngSubmit)="sendMessage(contactForm)" class="space-y-6 relative z-10 font-sans">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label class="text-muted text-[9px] font-black uppercase tracking-[0.15em] ml-2">Your Signature</label>
-              <input type="text" name="name" [(ngModel)]="formData.name" required
-                     class="w-full glass-input rounded-xl px-5 py-4 text-xs placeholder:text-muted/40 focus:outline-none"
-                     placeholder="Full Identity">
+    <!-- Transmission Terminal Form (7 cols) -->
+    <div class="lg:col-span-7">
+      <div class="glass-card p-6 md:p-8 space-y-6 relative overflow-hidden">
+        
+        <div class="flex items-center justify-between border-b border-white/5 pb-4">
+          <div class="space-y-1">
+            <h3 class="text-lg font-black text-main font-display">Transmission Terminal</h3>
+            <p class="text-[10px] font-bold uppercase tracking-wider text-muted">Send a message directly</p>
+          </div>
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        </div>
+
+        <!-- Success Feedback Banner -->
+        @if (submitSuccess) {
+          <div class="p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 space-y-1 animate-fade-in-up">
+            <div class="flex items-center gap-2 font-black text-xs uppercase tracking-wider">
+              <i class="fa-solid fa-circle-check text-sm"></i>
+              Message Sent Successfully!
             </div>
+            <p class="text-[11px] text-emerald-200/90 font-medium">
+              Thank you for reaching out. I have received your message and will reply within 24 hours.
+            </p>
+          </div>
+        }
+
+        <!-- Error Feedback Banner -->
+        @if (submitError) {
+          <div class="p-4 rounded-xl bg-rose-500/15 border border-rose-500/30 text-rose-300 space-y-1 animate-fade-in-up">
+            <div class="flex items-center gap-2 font-black text-xs uppercase tracking-wider">
+              <i class="fa-solid fa-triangle-exclamation text-sm"></i>
+              Submission Notice
+            </div>
+            <p class="text-[11px] text-rose-200/90 font-medium">
+              Could not send instantly. Please email directly at <a href="mailto:prabukannanofficial@gmail.com" class="underline font-bold">prabukannanofficial&#64;gmail.com</a>.
+            </p>
+          </div>
+        }
+
+        <!-- Interactive Form -->
+        <form 
+          #contactForm="ngForm" 
+          (ngSubmit)="sendMessage(contactForm)" 
+          class="space-y-5">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- Full Name -->
             <div class="space-y-2">
-              <label class="text-muted text-[9px] font-black uppercase tracking-[0.15em] ml-2">Return Link</label>
-              <input type="email" name="email" [(ngModel)]="formData.email" required
-                     class="w-full glass-input rounded-xl px-5 py-4 text-xs placeholder:text-muted/40 focus:outline-none"
-                     placeholder="email-address&#64;provider.com">
+              <label class="text-muted text-[10px] font-black uppercase tracking-[0.18em] block">
+                Your Full Name <span class="text-cyan-400">*</span>
+              </label>
+              <input 
+                type="text" 
+                name="name" 
+                [(ngModel)]="formData.name" 
+                required
+                class="w-full glass-input rounded-xl px-4 py-3.5 text-xs placeholder:text-muted/40 focus:outline-none"
+                placeholder="e.g. John Doe">
+            </div>
+
+            <!-- Email Address -->
+            <div class="space-y-2">
+              <label class="text-muted text-[10px] font-black uppercase tracking-[0.18em] block">
+                Email Address <span class="text-cyan-400">*</span>
+              </label>
+              <input 
+                type="email" 
+                name="email" 
+                [(ngModel)]="formData.email" 
+                required
+                email
+                class="w-full glass-input rounded-xl px-4 py-3.5 text-xs placeholder:text-muted/40 focus:outline-none"
+                placeholder="e.g. john@company.com">
             </div>
           </div>
 
+          <!-- Message -->
           <div class="space-y-2">
-            <label class="text-muted text-[9px] font-black uppercase tracking-[0.15em] ml-2">Project Brief</label>
-            <textarea name="message" [(ngModel)]="formData.message" rows="4" required
-                      class="w-full glass-input rounded-2xl px-5 py-5 text-xs placeholder:text-muted/40 resize-none focus:outline-none"
-                      placeholder="Detailed specifications or inquiries..."></textarea>
+            <label class="text-muted text-[10px] font-black uppercase tracking-[0.18em] block">
+              Project Brief or Message <span class="text-cyan-400">*</span>
+            </label>
+            <textarea 
+              name="message" 
+              [(ngModel)]="formData.message" 
+              rows="4" 
+              required
+              class="w-full glass-input rounded-xl px-4 py-3.5 text-xs placeholder:text-muted/40 resize-none focus:outline-none"
+              placeholder="Tell me about your project, timeline, or inquiries..."></textarea>
           </div>
 
-          <button type="submit" [disabled]="!contactForm.valid"
-                  class="w-full py-4.5 bg-primary text-white font-black text-[10px] uppercase tracking-[0.3em] rounded-xl shadow-glow hover:bg-primary-dark transition-all disabled:opacity-20 active:scale-95 group/btn flex items-center justify-center gap-3">
-            Initiate Contact
-            <i class="fa-solid fa-paper-plane group-hover/btn:translate-x-1.5 transition-transform text-xs"></i>
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            [disabled]="!contactForm.valid || isSubmitting"
+            class="w-full py-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 text-white font-black text-[10px] uppercase tracking-[0.25em] rounded-xl shadow-glow hover:opacity-95 transition-all disabled:opacity-30 disabled:cursor-not-allowed active:scale-[0.98] flex items-center justify-center gap-2 group/btn">
+            @if (isSubmitting) {
+              <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <span>Dispatching Transmission...</span>
+            } @else {
+              <span>Initiate Transmission</span>
+              <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            }
           </button>
+
         </form>
+
       </div>
     </div>
+
   </div>
+
 </section>

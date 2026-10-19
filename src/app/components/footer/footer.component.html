@@ -1,0 +1,95 @@
+<footer class="w-full border-t border-white/10 mt-20 relative overflow-hidden bg-slate-950/40 backdrop-blur-xl">
+  
+  <!-- Subtle Ambient Glow -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-purple-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-8">
+    
+    <!-- Brand / Identity -->
+    <div class="space-y-2 text-center md:text-left">
+      <div class="flex items-center justify-center md:justify-start gap-2.5">
+        <div class="h-7 w-7 bg-gradient-to-tr from-purple-600 to-cyan-500 rounded-lg flex items-center justify-center text-white text-xs font-black shadow-glow font-display">
+          P
+        </div>
+        <span class="text-lg font-black tracking-tight text-main font-display">
+          PRABU<span class="text-cyan-400">.</span>
+        </span>
+      </div>
+      <p class="text-xs text-muted font-medium">
+        Creative Front-End Developer • Designing Digital Experiences
+      </p>
+    </div>
+
+    <!-- Quick Navigation Links -->
+    <ul class="flex flex-wrap items-center justify-center gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-muted">
+      <li>
+        <a (click)="scrollTo('home')" href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('about')" href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('skills')" href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('projects')" href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+      </li>
+      <li>
+        <a (click)="scrollTo('contact')" href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Back to Top & Socials -->
+    <div class="flex items-center gap-4">
+      
+      <!-- Socials -->
+      <div class="flex items-center gap-3">
+        <a 
+          href="https://github.com/PrabuKannan18" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="GitHub Profile"
+          class="w-8 h-8 rounded-lg glass border border-white/10 flex items-center justify-center text-muted hover:text-white hover:scale-110 transition-all">
+          <i class="fa-brands fa-github text-sm"></i>
+        </a>
+        <a 
+          href="https://www.linkedin.com/in/prabu-kannan-986b5827b" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="LinkedIn Profile"
+          class="w-8 h-8 rounded-lg glass border border-white/10 flex items-center justify-center text-muted hover:text-[#3880FF] hover:scale-110 transition-all">
+          <i class="fa-brands fa-linkedin text-sm"></i>
+        </a>
+        <a 
+          href="https://www.instagram.com/p_r_a_b_u_2_k_2" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Instagram Profile"
+          class="w-8 h-8 rounded-lg glass border border-white/10 flex items-center justify-center text-muted hover:text-rose-400 hover:scale-110 transition-all">
+          <i class="fa-brands fa-instagram text-sm"></i>
+        </a>
+      </div>
+
+      <div class="h-6 w-px bg-white/10"></div>
+
+      <!-- Animated Back-to-Top Button -->
+      <button 
+        (click)="scrollToTop()" 
+        aria-label="Scroll to top of the page"
+        class="h-10 px-4 rounded-xl glass border border-white/10 hover:border-cyan-400/40 text-muted hover:text-cyan-400 hover:shadow-glow transition-all flex items-center gap-2 group active:scale-95 text-[10px] font-black uppercase tracking-wider">
+        <span>Top</span>
+        <svg class="w-3.5 h-3.5 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Copyright Subline -->
+  <div class="border-t border-white/5 py-4 text-center text-[10px] text-muted font-medium">
+    &copy; {{ currentYear }} Prabu Kannan. Built with Angular 19.2 &amp; Tailwind CSS v4. All rights reserved.
+  </div>
+
+</footer>

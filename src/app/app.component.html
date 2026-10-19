@@ -1,13 +1,16 @@
-<div class="min-h-screen flex flex-col font-sans selection:bg-violet-500/30 selection:text-white bg-bg-deep overflow-x-hidden">
-  <!-- Fixed Navigation -->
-  <app-navbar class="fixed top-0 left-0 w-full z-[100]"></app-navbar>
+<div class="min-h-screen flex flex-col font-sans selection:bg-cyan-500/30 selection:text-white bg-bg-deep overflow-x-hidden">
+  <!-- Fixed Sticky Glass Navigation -->
+  <app-navbar></app-navbar>
 
-  <main class="flex-1 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-20">
-    <!-- Single Page Scrolling Sections -->
+  <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-20">
+    <!-- Single Page Scrolling Sections with Ambient Transitions -->
     <app-home></app-home>
     <app-about-me></app-about-me>
     <app-skills></app-skills>
     <app-projects></app-projects>
     <app-contact></app-contact>
   </main>
+
+  <!-- Modern Minimal Footer -->
+  <app-footer></app-footer>
 </div>

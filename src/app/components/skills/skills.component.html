@@ -1,176 +1,123 @@
-<section id="skills" class="max-w-6xl mx-auto px-6 section-padding reveal space-y-10">
-  <div class="text-center space-y-3">
-    <h2 class="text-primary font-bold tracking-[0.2em] uppercase text-[9px]">Technical Arsenal</h2>
-    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-main">Engineering <span class="text-gradient">Stack</span></h1>
-    <p class="text-muted max-w-xl mx-auto text-sm md:text-base font-medium leading-relaxed">
-      A comprehensive environment of localized expertise across the modern full-stack ecosystem.
+<section 
+  id="skills" 
+  #skillsSection
+  class="max-w-6xl mx-auto px-6 section-padding relative overflow-hidden"
+  [class.section-visible]="isVisible">
+
+  <!-- Section Header -->
+  <div class="text-center space-y-4 mb-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-cyan text-[9px] font-black uppercase tracking-[0.25em]">
+      <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+      Technical Proficiency
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-main font-display">
+      Engineering <span class="text-gradient">Arsenal</span>
+    </h1>
+
+    <p class="text-muted max-w-xl mx-auto text-base sm:text-lg font-medium leading-relaxed">
+      A battle-tested technology ecosystem spanning modern front-end frameworks, mobile hybrid platforms, and scalable backends.
     </p>
   </div>
 
-  <!-- Full Skill Matrix: Ultra-Clean, Fast-Scan Grid -->
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 font-sans">
+  <!-- Interactive Category Filter Tabs -->
+  <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
     
-    <!-- Angular -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-primary/5">
-        <i class="fa-brands fa-angular text-2xl text-[#DD0031]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Angular</h3>
-    </div>
+    <button 
+      (click)="setFilter('all')"
+      [class.tab-active]="activeFilter === 'all'"
+      class="tab-btn px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.18em] transition-all duration-300">
+      All Tech ({{ skills.length }})
+    </button>
 
-    <!-- React -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-sky-400/5">
-        <i class="fa-brands fa-react text-2xl text-[#61DAFB]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">React</h3>
-    </div>
+    <button 
+      (click)="setFilter('frontend')"
+      [class.tab-active]="activeFilter === 'frontend'"
+      class="tab-btn px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.18em] transition-all duration-300">
+      Frontend &amp; Mobile
+    </button>
 
-    <!-- Ionic -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-primary/5">
-        <i class="fa-solid fa-mobile-screen-button text-2xl text-[#3880FF]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Ionic</h3>
-    </div>
+    <button 
+      (click)="setFilter('core')"
+      [class.tab-active]="activeFilter === 'core'"
+      class="tab-btn px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.18em] transition-all duration-300">
+      Languages &amp; Core
+    </button>
 
-    <!-- TypeScript -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-blue-500/5 text-bold">
-        <span class="text-[#3178C6] font-black text-xl">TS</span>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">TypeScript</h3>
-    </div>
+    <button 
+      (click)="setFilter('styling')"
+      [class.tab-active]="activeFilter === 'styling'"
+      class="tab-btn px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.18em] transition-all duration-300">
+      Styling &amp; Design
+    </button>
 
-    <!-- JavaScript -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-yellow-500/5">
-        <i class="fa-brands fa-js text-2xl text-[#F7DF1E]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">JavaScript</h3>
-    </div>
-
-    <!-- Tailwind -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-sky-400/5">
-        <i class="fa-solid fa-droplet text-2xl text-[#06B6D4]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Tailwind</h3>
-    </div>
-
-    <!-- Bootstrap -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-purple-500/5">
-        <i class="fa-brands fa-bootstrap text-2xl text-[#7952B3]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Bootstrap</h3>
-    </div>
-
-    <!-- Shadcn -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-white/5">
-        <i class="fa-solid fa-cube text-2xl text-main"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Shadcn UI</h3>
-    </div>
-
-    <!-- HTML5 -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-orange-500/5">
-        <i class="fa-brands fa-html5 text-2xl text-[#E34F26]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">HTML5</h3>
-    </div>
-
-    <!-- CSS3 -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-blue-500/5">
-        <i class="fa-brands fa-css3-alt text-2xl text-[#1572B6]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">CSS3</h3>
-    </div>
-
-    <!-- RxJS -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-pink-500/5 text-bold">
-        <i class="fa-solid fa-infinity text-2xl text-[#B7178C]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">RxJS</h3>
-    </div>
-
-    <!-- Node.js -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-green-500/5">
-        <i class="fa-brands fa-node-js text-2xl text-[#339933]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Node.js</h3>
-    </div>
-
-    <!-- Firebase -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-amber-500/5">
-        <i class="fa-solid fa-fire text-2xl text-[#FFCA28]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Firebase</h3>
-    </div>
-
-    <!-- Git / GitHub -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-orange-500/5">
-        <i class="fa-brands fa-git-alt text-2xl text-[#F05032]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Git / GitHub</h3>
-    </div>
-
-    <!-- Flutter -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-sky-400/5">
-        <i class="fa-solid fa-dove text-2xl text-[#02569B]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Flutter</h3>
-    </div>
-
-    <!-- Next.js -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-white/5">
-         <span class="text-main font-black text-xl">N</span>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Next.js</h3>
-    </div>
-
-    <!-- Spring Boot -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-green-500/5">
-        <i class="fa-brands fa-java text-2xl text-[#6DB33F]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Spring Boot</h3>
-    </div>
-
-    <!-- Supabase -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-emerald-500/5">
-        <i class="fa-solid fa-bolt text-2xl text-[#3ECF8E]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">Supabase</h3>
-    </div>
-
-    <!-- PostgreSQL -->
-    <div class="group glass rounded-2xl p-4 text-center space-y-3 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 border-white/5 active:scale-95">
-      <div class="h-12 w-12 mx-auto glass rounded-xl flex items-center justify-center group-hover:bg-blue-500/5">
-        <i class="fa-solid fa-database text-2xl text-[#336791]"></i>
-      </div>
-      <h3 class="text-[11px] font-bold text-main">PostgreSQL</h3>
-    </div>
+    <button 
+      (click)="setFilter('backend')"
+      [class.tab-active]="activeFilter === 'backend'"
+      class="tab-btn px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.18em] transition-all duration-300">
+      Backend &amp; Cloud
+    </button>
 
   </div>
 
-  <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-10 border-t border-white/5">
-    <div class="space-y-1">
-      <h4 class="text-lg font-black text-main">Full-Stack Capability</h4>
-      <p class="text-muted text-[10px] font-bold uppercase tracking-widest">Architecting future-ready digital platforms</p>
+  <!-- Animated Skill Cards Grid -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    
+    @for (skill of filteredSkills; track skill.name) {
+      <div 
+        class="skill-card glass rounded-2xl p-5 text-center flex flex-col items-center justify-between gap-3 border border-slate-200 dark:border-white/5 transition-all duration-300 group hover:-translate-y-1.5 cursor-default"
+        [style.--skill-color]="skill.color">
+        
+        <!-- Icon Container -->
+        <div 
+          class="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+          [style.background]="skill.bgColor">
+          
+          @if (skill.iconType === 'fa') {
+            <i 
+              [class]="skill.iconClass + ' text-2xl transition-transform duration-300 group-hover:rotate-6'" 
+              [style.color]="skill.color"></i>
+          } @else {
+            <span 
+              class="font-black text-xl tracking-tight transition-transform duration-300 group-hover:scale-110"
+              [style.color]="skill.color">
+              {{ skill.textIcon }}
+            </span>
+          }
+        </div>
+
+        <!-- Name & Tag -->
+        <div class="space-y-1 w-full">
+          <h3 class="text-xs sm:text-sm font-bold text-main tracking-tight truncate group-hover:text-primary transition-colors">
+            {{ skill.name }}
+          </h3>
+          <p class="text-[8px] font-black uppercase tracking-wider text-muted truncate">
+            {{ skill.tag }}
+          </p>
+        </div>
+
+      </div>
+    }
+
+  </div>
+
+  <!-- Bottom Interactive Section -->
+  <div class="mt-16 pt-10 border-t border-slate-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="space-y-1 text-center md:text-left">
+      <h4 class="text-lg font-black text-main font-display">Production-Tested Standards</h4>
+      <p class="text-muted text-[10px] font-bold uppercase tracking-widest">
+        Scalable patterns • Clean Code • Zero Render Blocking
+      </p>
     </div>
-    <a href="#contact" class="px-8 py-3 bg-primary text-white font-bold text-[10px] uppercase tracking-[0.2em] rounded-xl shadow-glow active:scale-95 transition-all inline-block">
-      Connect Hub →
+
+    <a 
+      href="#projects" 
+      class="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-2xl shadow-glow font-black text-[10px] uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2 group">
+      <span>Featured Projects</span>
+      <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+      </svg>
     </a>
   </div>
+
 </section>

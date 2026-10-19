@@ -1,129 +1,141 @@
-<section id="projects" class="max-w-7xl mx-auto px-6 pt-6 pb-12 reveal space-y-8">
-  <!-- Ultra-Smart Header -->
-  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/5 pb-6">
-    <div class="space-y-1">
-      <h2 class="text-primary font-bold tracking-[0.25em] uppercase text-[8px]">Engineering Portfolio</h2>
-      <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-main">Technical <span class="text-gradient">Gallery</span></h1>
+<section 
+  id="projects" 
+  #projectsSection
+  class="max-w-7xl mx-auto px-6 section-padding relative overflow-hidden"
+  [class.section-visible]="isVisible">
+
+  <!-- Section Header -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8 mb-12">
+    <div class="space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-purple-500/20 text-purple-400 font-bold text-[9px] uppercase tracking-[0.25em]">
+        <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping"></span>
+        Production Works
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-main font-display">
+        Technical <span class="text-gradient">Gallery</span>
+      </h1>
+      <p class="text-muted max-w-xl text-base sm:text-lg font-medium leading-relaxed">
+        A curated selection of production-grade web applications, mobile architectures, and responsive digital platforms.
+      </p>
     </div>
-    <div class="flex gap-10 items-center">
-       <div class="text-center">
-          <p class="text-[14px] font-black text-main">10+</p>
-          <p class="text-[8px] font-bold uppercase tracking-widest text-muted">Apps Built</p>
-       </div>
-       <div class="h-8 w-px bg-white/5"></div>
-       <div class="text-center">
-          <p class="text-[14px] font-black text-main">02</p>
-          <p class="text-[8px] font-bold uppercase tracking-widest text-muted">Core Years</p>
-       </div>
+
+    <!-- Quick Metrics -->
+    <div class="flex items-center gap-8 self-start md:self-end">
+      <div class="text-left md:text-right">
+        <p class="text-2xl font-black text-main font-display">10+</p>
+        <p class="text-[9px] font-black uppercase tracking-widest text-muted">Apps Shipped</p>
+      </div>
+      <div class="h-8 w-px bg-white/10"></div>
+      <div class="text-left md:text-right">
+        <p class="text-2xl font-black text-cyan-400 font-display">100%</p>
+        <p class="text-[9px] font-black uppercase tracking-widest text-muted">Responsive</p>
+      </div>
     </div>
   </div>
 
-  <!-- Smart Dense Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+  <!-- Projects Gallery Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     
-    <!-- Project 1 -->
-    <div class="group relative glass-card p-4 space-y-4 hover:shadow-glow hover:-translate-y-1 transition-all border-white/5 overflow-hidden">
-      <div class="relative aspect-[16/9] rounded-2xl overflow-hidden">
-        <img src="/imgs/product.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Product Engine">
-        <div class="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent"></div>
-        <div class="absolute top-2 right-2">
-          <span class="px-2 py-0.5 glass rounded-lg text-white text-[8px] font-black uppercase tracking-widest">E-Comm Hub</span>
-        </div>
-      </div>
-      
-      <div class="space-y-3 px-1">
-        <div class="flex items-center justify-between text-main">
-          <h3 class="text-lg font-black truncate group-hover:text-primary transition-colors">Product Sale Suite</h3>
-          <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-20 group-hover:opacity-100 transition-all"></i>
-        </div>
-        <div class="flex flex-wrap gap-1.5">
-           <span class="px-2 py-0.5 glass text-primary text-[8px] font-black rounded-lg uppercase tracking-widest">Angular</span>
-           <span class="px-2 py-0.5 glass text-sky-400 text-[8px] font-black rounded-lg uppercase tracking-widest">Firebase</span>
-        </div>
-        <a href="https://product-66ae3.web.app/" target="_blank"
-           class="inline-flex items-center justify-center w-full py-2.5 bg-primary text-white font-black rounded-xl shadow-glow hover:bg-primary-dark transition-all text-[9px] uppercase tracking-[0.2em] active:scale-95">
-          Launch Demo
-        </a>
-      </div>
-    </div>
+    @for (project of projects; track project.id) {
+      <div class="project-card glass-card overflow-hidden group flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-500">
+        
+        <!-- Media Showcase -->
+        <div class="relative aspect-[16/9] overflow-hidden bg-slate-900 border-b border-white/5">
+          <img 
+            [src]="project.image" 
+            [alt]="project.title"
+            class="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108">
+          
+          <!-- Soft Gradient Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
 
-    <!-- Project 2 -->
-    <div class="group relative glass-card p-4 space-y-4 hover:shadow-glow hover:-translate-y-1 transition-all border-white/5 overflow-hidden">
-      <div class="relative aspect-[16/9] rounded-2xl overflow-hidden">
-        <img src="/imgs/whatsapp.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Messaging Clone">
-        <div class="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent"></div>
-        <div class="absolute top-2 right-2">
-           <span class="px-2 py-0.5 glass rounded-lg text-white text-[8px] font-black uppercase tracking-widest">Real-Time Core</span>
-        </div>
-      </div>
-      
-      <div class="space-y-3 px-1">
-        <div class="flex items-center justify-between text-main">
-          <h3 class="text-lg font-black truncate group-hover:text-primary transition-colors">Messaging Hub</h3>
-          <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-20 group-hover:opacity-100 transition-all"></i>
-        </div>
-        <div class="flex flex-wrap gap-1.5">
-           <span class="px-2 py-0.5 glass text-primary text-[8px] font-black rounded-lg uppercase tracking-widest">Ionic Hybrid</span>
-           <span class="px-2 py-0.5 glass text-rose-400 text-[8px] font-black rounded-lg uppercase tracking-widest">Socket.io</span>
-        </div>
-        <a href="https://whatsapp-f646c.web.app/" target="_blank"
-           class="inline-flex items-center justify-center w-full py-2.5 bg-primary text-white font-black rounded-xl shadow-glow hover:bg-primary-dark transition-all text-[9px] uppercase tracking-[0.2em] active:scale-95">
-          Launch Demo
-        </a>
-      </div>
-    </div>
+          <!-- Category Pill -->
+          <div class="absolute top-4 left-4 z-10">
+            <span class="px-3 py-1 rounded-full glass border border-white/15 text-white text-[9px] font-black uppercase tracking-wider backdrop-blur-md">
+              {{ project.category }}
+            </span>
+          </div>
 
-    <!-- Project 3 -->
-    <div class="group relative glass-card p-4 space-y-4 hover:shadow-glow hover:-translate-y-1 transition-all border-white/5 overflow-hidden">
-      <div class="relative aspect-[16/9] rounded-2xl overflow-hidden">
-        <img src="/imgs/recipes.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Lifestyle Web">
-        <div class="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent"></div>
-        <div class="absolute top-2 right-2">
-          <span class="px-2 py-0.5 glass rounded-lg text-white text-[8px] font-black uppercase tracking-widest">Consumer Hub</span>
+          <!-- Live Indicator -->
+          <div class="absolute top-4 right-4 z-10">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-[9px] font-bold uppercase tracking-wider backdrop-blur-md">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Live Demo
+            </span>
+          </div>
         </div>
-      </div>
-      
-      <div class="space-y-3 px-1">
-        <div class="flex items-center justify-between text-main">
-          <h3 class="text-lg font-black truncate group-hover:text-primary transition-colors">Culinary Portal</h3>
-          <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-20 group-hover:opacity-100 transition-all"></i>
-        </div>
-        <div class="flex flex-wrap gap-1.5">
-           <span class="px-2 py-0.5 glass text-primary text-[8px] font-black rounded-lg uppercase tracking-widest">React Flow</span>
-           <span class="px-2 py-0.5 glass text-amber-500 text-[8px] font-black rounded-lg uppercase tracking-widest">Material UI</span>
-        </div>
-        <a href="https://recipes-7a3da.firebaseapp.com/" target="_blank"
-           class="inline-flex items-center justify-center w-full py-2.5 bg-primary text-white font-black rounded-xl shadow-glow hover:bg-primary-dark transition-all text-[9px] uppercase tracking-[0.2em] active:scale-95">
-          Launch Demo
-        </a>
-      </div>
-    </div>
 
-    <!-- Project 4 -->
-    <div class="group relative glass-card p-4 space-y-4 hover:shadow-glow hover:-translate-y-1 transition-all border-white/5 overflow-hidden">
-      <div class="relative aspect-[16/9] rounded-2xl overflow-hidden">
-        <img src="/imgs/Food cart.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Food Cart Hub">
-        <div class="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent"></div>
-        <div class="absolute top-2 right-2">
-           <span class="px-2 py-0.5 glass rounded-lg text-white text-[8px] font-black uppercase tracking-widest">Modern Retail</span>
+        <!-- Content Area -->
+        <div class="p-6 md:p-8 space-y-6 flex-1 flex flex-col justify-between">
+          
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-2xl font-black text-main group-hover:text-cyan-400 transition-colors font-display">
+                {{ project.title }}
+              </h3>
+              <a 
+                [href]="project.demoUrl" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-9 h-9 rounded-xl glass border border-white/10 flex items-center justify-center text-muted group-hover:text-cyan-400 group-hover:scale-110 transition-all"
+                [attr.aria-label]="'Open live demo for ' + project.title">
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+
+            <p class="text-muted text-sm sm:text-base leading-relaxed">
+              {{ project.description }}
+            </p>
+          </div>
+
+          <!-- Tech Stack Chips & Action Button -->
+          <div class="space-y-6 pt-4 border-t border-white/5">
+            <div class="flex flex-wrap gap-2">
+              @for (t of project.tech; track t.name) {
+                <span 
+                  [class]="'px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider border border-white/5 ' + t.colorClass">
+                  {{ t.name }}
+                </span>
+              }
+            </div>
+
+            <a 
+              [href]="project.demoUrl" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full py-3.5 bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 text-white font-black text-[10px] uppercase tracking-[0.2em] rounded-xl shadow-glow hover:opacity-95 transition-all inline-flex items-center justify-center gap-2 group/btn active:scale-[0.98]">
+              <span>Launch Live Application</span>
+              <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+
         </div>
+
       </div>
-      
-      <div class="space-y-3 px-1">
-        <div class="flex items-center justify-between text-main">
-          <h3 class="text-lg font-black truncate group-hover:text-primary transition-colors">Retail Cart Engine</h3>
-          <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-20 group-hover:opacity-100 transition-all"></i>
-        </div>
-        <div class="flex flex-wrap gap-1.5">
-           <span class="px-2 py-0.5 glass text-primary text-[8px] font-black rounded-lg uppercase tracking-widest">Redux Hub</span>
-           <span class="px-2 py-0.5 glass text-emerald-500 text-[8px] font-black rounded-lg uppercase tracking-widest">Performance focus</span>
-        </div>
-        <a href="https://prabukannan18.github.io/Food-cart/" target="_blank"
-           class="inline-flex items-center justify-center w-full py-2.5 bg-primary text-white font-black rounded-xl shadow-glow hover:bg-primary-dark transition-all text-[9px] uppercase tracking-[0.2em] active:scale-95">
-          Launch Demo
-        </a>
-      </div>
-    </div>
+    }
 
   </div>
+
+  <!-- Section Footer Navigation -->
+  <div class="mt-16 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
+      <p class="text-muted font-bold uppercase tracking-widest text-[10px]">
+        Ready to collaborate on your next enterprise product?
+      </p>
+    </div>
+
+    <a 
+      href="#contact" 
+      class="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-2xl shadow-glow font-black text-[10px] uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2 group">
+      <span>Get In Touch</span>
+      <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+      </svg>
+    </a>
+  </div>
+
 </section>
